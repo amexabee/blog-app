@@ -23,4 +23,4 @@ rails generate model Like   # set associations for the model; that's very import
 rails generate model Comment text:text   # delete the new migration file because, migrate command create tables based on these models which raises error since they are already created 
 ```
 
-commit [link](https://github.com/amexabee/blog-app/pull/2/commits/a7bb33dff069017a38d4de7cf161435411d2c9ef)
+[commit link for associations](https://github.com/amexabee/blog-app/pull/2/commits/a7bb33dff069017a38d4de7cf161435411d2c9ef)
