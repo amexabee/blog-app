@@ -6,9 +6,9 @@ rails generate migration CreateLike
 rails generate migration CreateComment text:text
 rails db:migrate
 
-rails generate migration AddUserRefToPost author_id:integer:index   // don't forget to go and add a foreign key to the newly created migrate file 
-rails generate migration AddUserRefToLike author_id:integer:index   // // again foreign key sth like: add_foreign_key :likes, :users, column: :author_id 
-rails generate migration AddUserRefToComment author_id:integer:index // again foreign key sth like: add_foreign_key :comments, :users, column: author_id
+rails generate migration AddUserRefToPost author_id:integer:index       # don't forget to go and add a foreign key to the newly created migrate file 
+rails generate migration AddUserRefToLike author_id:integer:index       # again foreign key sth like: add_foreign_key :likes, :users, column: :author_id 
+rails generate migration AddUserRefToComment author_id:integer:index    # again foreign key sth like: add_foreign_key :comments, :users, column: author_id
 rails db:migrate
 
 rails generate migration AddPostRefToLike post_id:integer:index
