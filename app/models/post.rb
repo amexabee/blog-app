@@ -1,14 +1,15 @@
-require_relative 'comment'
-
 class Post < ApplicationRecord
-  def self.update_counter(user)
-    return if user.posts_counter.nil?
+  belongs_to :author, class_name: 'User', foreign_key: :author_id
+  has_many :comments, foreign_key: :post_id
+  has_many :likes, foreign_key: :post_id
 
-    user.posts_counter += 1
-    user.save
+  after_save :update_counter
+
+  def update_counter
+    author.update(posts_counter: author.posts.count)
   end
 
-  def self.five_recent_comments(post)
-    Comment.where(post_id: post.id).limit(5).order(created_at: :DESC)
+  def five_recent_comments
+    comments.includes(:post).limit(5).order(created_at: :DESC)
   end
 end
