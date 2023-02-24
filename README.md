@@ -106,7 +106,9 @@ rspec spec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **More methods**
+- [ ] **I will create all controllers and views for the app**
+- [ ] **I will add forms for the app**
+- [ ] **I will add authentication**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
