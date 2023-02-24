@@ -10,7 +10,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -56,25 +55,41 @@ The Blog app is a classic example of a blog website. With its functionality comp
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [N/A](https://yourdeployedapplicationlink.com)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
-Clone project
 
-```bash
+### Prerequisites
+
+```
+Ruby
+Ruby on Rails
+Visual Studio Code
+PostgreSQL
+
+```
+### Setup
+
+```
 git clone https://github.com/amexabee/blog-app
 cd blog-app
 ```
 
-Run the program
+## Install
 
-```bash
-rails s
+```
+bundle install
+rails db:create
+rails db:migrate
+
+```
+## Usage
+
+```
+rails server
+```
+## Test
+```
+rspec spec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -91,7 +106,9 @@ rails s
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **More methods**
+- [ ] **I will create all controllers and views for the app**
+- [ ] **I will add forms for the app**
+- [ ] **I will add authentication**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
