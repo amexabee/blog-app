@@ -24,3 +24,9 @@ rails generate model Comment text:text   # delete the new migration file because
 ```
 
 [commit link for associations](https://github.com/amexabee/blog-app/pull/2/commits/a7bb33dff069017a38d4de7cf161435411d2c9ef)
+
+```bash
+rails generate controller Users index show  # changed the default route logic to resources ... and also add logic in the index and show methods (check commit link)
+rails generate controller Posts index show  # changed the default route logic to a nested one inside user and also add logic in the index and show methods (link below)
+```
+[commit link for associations](https://github.com/amexabee/blog-app/pull/4/commits/931f585bec4a9adbcdb6da8a09788c0e36d8634c)
