@@ -29,4 +29,4 @@ rails generate model Comment text:text   # delete the new migration file because
 rails generate controller Users index show  # change the default route logic to resources ... and also add logic in the index and show methods (check commit link)
 rails generate controller Posts index show  # change the default route logic to a nested one inside user and also add logic in the index and show methods (link below)
 ```
-[commit link for associations](https://github.com/amexabee/blog-app/pull/4/commits/931f585bec4a9adbcdb6da8a09788c0e36d8634c)
+[commit link for the logic of index and show methods](https://github.com/amexabee/blog-app/pull/4/commits/931f585bec4a9adbcdb6da8a09788c0e36d8634c)
