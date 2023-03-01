@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe "UsersController", type: :request do
   describe "GET #index" do
     before do
-      User.create!(name: "Alice", posts_counter: 0)
-      User.create!(name: "Bob", posts_counter: 0)
+      User.create!(name: "Amanuel", posts_counter: 0)
     end
 
     it "returns a successful response" do
