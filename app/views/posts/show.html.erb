@@ -3,4 +3,4 @@
   <span>Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></span>
   <p><%=@post.text%></p>
   </div>
-  <%= render partial: "comment", locals: { post: @post } %>
+  <%= render partial: "comment", locals: { comments: @post.comments } %>
