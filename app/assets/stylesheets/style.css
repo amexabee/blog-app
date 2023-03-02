@@ -7,11 +7,11 @@ body {
 
 .users-list {
   list-style-type: none;
+  padding-left: 0;
 }
 
 .users-list li {
-  display: flex;
-  margin-bottom: 4px;
+  margin: 0 0 4px 0;
 }
 
 img {
@@ -35,7 +35,7 @@ img {
   align-self: flex-end;
 }
 
-.user {
+.username {
   display: flex;
 }
 
