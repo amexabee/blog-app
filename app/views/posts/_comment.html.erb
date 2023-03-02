@@ -1,0 +1,10 @@
+<%unless post.comments.empty?%>
+<div class='comment'>
+  <% post.comments.each do |comment| %>
+  <div>
+  Username: <%= comment.author.name%>
+  Comment: <%= comment.text%>
+  </div>
+<% end %>
+</div>
+<%end%>
