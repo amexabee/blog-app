@@ -1,1 +1,17 @@
-<h1>User</h1>
+<div class='user'>
+<img src='https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'>
+<div class="content"><h3><%=@user.name%></h3><h4>Number of posts: <%= @user.posts_counter%></h4></div></li>
+</div>
+<div>
+<h3>Bio</h3>
+<p><%=@user.bio%></p>
+</div>
+<ul class='user-posts'>
+<% @user.posts.each_with_index do |post, index| %>
+  <li>
+  <h4>Post #<%=index + 1%></h4>
+  <p><%=post.text%></p>
+  <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
+  </li>
+<% end %>
+</ul>

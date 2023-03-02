@@ -5,11 +5,11 @@ body {
   background-color: #fff;
 }
 
-ul {
+.users-list {
   list-style-type: none;
 }
 
-li {
+.users-list li {
   display: flex;
   margin-bottom: 4px;
 }
@@ -19,7 +19,7 @@ img {
   height: 96px;
 }
 
-#content {
+.content {
   min-width: 200px;
   max-height: 92px;
   margin-left: 2px;
@@ -31,6 +31,27 @@ img {
   border: 2px solid #000;
 }
 
-h4 {
+.content h4 {
+  align-self: flex-end;
+}
+
+.user {
+  display: flex;
+}
+
+.user-posts {
+  list-style: none;
+}
+
+.user-posts li {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  border: 1px solid #000;
+  margin: 5px;
+  padding: 5px;
+}
+
+.user-posts li span {
   align-self: flex-end;
 }
