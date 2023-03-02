@@ -1,1 +1,6 @@
-<h1>Post from user</h1>
+  <div class='single-post'>
+  <h4>Post #<%=@post.id%> by <%=@post.author.name%></h4>
+  <span>Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></span>
+  <p><%=@post.text%></p>
+  </div>
+  <%= render partial: "comment", locals: { comments: @post.comments } %>

@@ -1,1 +1,10 @@
-<h1>Users</h1>
+<ul class='users-list'>
+<% @users.each do |user| %>
+  <li>
+  <%link = "users/#{user.id}"%>
+  <a href=<%=link%>>
+<%= render partial: "username", locals: { user: user } %>
+</a>
+</li>
+<% end %>
+</ul>

@@ -1,1 +1,16 @@
-<h1>User</h1>
+<%= render partial: "username", locals: { user: @user } %>
+<div>
+<h3>Bio</h3>
+<p><%=@user.bio%></p>
+</div>
+<ul class='user-posts'>
+<% @user.three_recent_posts.each_with_index do |post, index| %>
+  <li>
+  <h4>Post #<%=index + 1%></h4>
+  <p><%=post.text%></p>
+  <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
+  </li>
+<% end %>
+<%link = "#{@user.id}/posts"%>
+<button><a href=<%=link%>>Show All Posts</a></button>
+</ul>
