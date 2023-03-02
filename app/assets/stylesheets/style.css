@@ -43,7 +43,8 @@ img {
   list-style: none;
 }
 
-.user-posts li {
+.user-posts li,
+.single-post {
   display: flex;
   flex-direction: column;
   max-width: 300px;
@@ -52,6 +53,14 @@ img {
   padding: 5px;
 }
 
-.user-posts li span {
+.user-posts li span,
+.single-post span {
   align-self: flex-end;
+}
+
+.comment {
+  max-width: 300px;
+  border: 1px solid #000;
+  margin: 5px;
+  padding: 5px;
 }

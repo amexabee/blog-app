@@ -1,1 +1,13 @@
-<h1>Post from user</h1>
+  <div class='single-post'>
+  <h4>Post #<%=@post.id%> by <%=@post.author.name%></h4>
+  <span>Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></span>
+  <p><%=@post.text%></p>
+  </div>
+  <div class='comment'>
+  <% @post.comments.each do |comment| %>
+    <div>
+    Username: <%= comment.author.name%>
+    Comment: <%= comment.text%>
+    </div>
+  <% end %>
+</div>
