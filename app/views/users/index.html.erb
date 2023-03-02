@@ -1,1 +1,7 @@
-<h1>Users</h1>
+<ul>
+<% @users.each do |user| %>
+  <li>
+  <img src='https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'>
+  <div id="content"><h3><%= user.name%></h3><h4>Number of posts: <%= user.posts_counter%></h4></div></li>
+<% end %>
+</ul>
