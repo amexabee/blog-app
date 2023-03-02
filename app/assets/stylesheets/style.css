@@ -53,8 +53,8 @@ img {
   padding: 5px;
 }
 
-.user-posts li span,
-.single-post span {
+.single-post span,
+.user-posts li span {
   align-self: flex-end;
 }
 
