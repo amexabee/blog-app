@@ -3,6 +3,6 @@
   <span>Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></span>
   <p><%=@post.text%></p>
   </div>
-  <%= render partial: "comment", locals: { comments: @post.comments } %>
-  <%= link_to "Add a comment", new_user_post_comment_path(current_user, @post) %>
-  <%= button_to "Like", user_post_likes_path(current_user, @post), method: :post %>
+  <%= render partial: 'comment', locals: { comments: @post.comments } %>
+  <%= link_to 'Add a comment', new_user_post_comment_path(current_user, @post) %>
+  <%= button_to 'Like', user_post_likes_path(current_user, @post), method: :post %>
