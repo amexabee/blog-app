@@ -4,3 +4,5 @@
   <p><%=@post.text%></p>
   </div>
   <%= render partial: "comment", locals: { comments: @post.comments } %>
+  <%= link_to "Add a comment", new_user_post_comment_path(current_user, @post) %>
+
