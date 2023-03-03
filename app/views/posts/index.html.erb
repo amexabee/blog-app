@@ -11,4 +11,5 @@
   </li>
   <%= render partial: "comment", locals: {comments: post.five_recent_comments} %>
 <% end %>
+<%= link_to "Create a new post", new_user_post_path(current_user) %>
 </ul>

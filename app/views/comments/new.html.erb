@@ -1,0 +1,13 @@
+<h1>New Comment</h1>
+
+<%= form_with(model: [@post.author, @comment], url: user_post_comments_path(@post.author, @post), local: true) do |f| %>
+  <div class="field">
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </div>
+  
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

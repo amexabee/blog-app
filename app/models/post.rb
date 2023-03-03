@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  before_validation :set_default_values
+
   validates :title, presence: true, length: { maximum: 250 }
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
@@ -15,5 +17,12 @@ class Post < ApplicationRecord
 
   def five_recent_comments
     comments.includes(:post).limit(5).order(created_at: :DESC)
+  end
+
+  private
+
+  def set_default_values
+    self.comments_counter ||= 0
+    self.likes_counter ||= 0
   end
 end
