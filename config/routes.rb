@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/new'
+  get 'likes/create'
   get 'comments/new'
   get 'comments/create'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
