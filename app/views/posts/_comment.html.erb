@@ -1,6 +1,6 @@
 <%unless comments.empty?%>
 <div class='comment'>
-  <% comments.each do |comment| %>
+  <% comments.includes(:author).each do |comment| %>
   <div>
   Username: <%= comment.author.name%>
   Comment: <%= comment.text%>

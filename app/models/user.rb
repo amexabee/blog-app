@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: :author_id
 
   def three_recent_posts
-    posts.includes(:author).limit(3).order(created_at: :DESC)
+    posts.limit(3).order(created_at: :DESC)
   end
 end
