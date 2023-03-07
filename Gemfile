@@ -76,3 +76,5 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
 
 gem 'rails-controller-testing'
+
+gem 'bullet'
