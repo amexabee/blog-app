@@ -128,12 +128,14 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
+    nokogiri (1.14.2-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.14.2-x64-unknown)
       racc (~> 1.4)
     parallel (1.22.1)
     parser (3.2.1.0)
       ast (~> 2.4.1)
-    pg (1.4.5)
+    pg (1.4.5-x64-mingw-ucrt)
     pg (1.4.5-x64-unknown)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -230,6 +232,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2022.7)
+      tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -249,7 +253,7 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
-  ruby
+  x64-mingw-ucrt
   x64-unknown
 
 DEPENDENCIES
@@ -273,7 +277,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 3.1.3p185
 
 BUNDLED WITH
    2.3.26
