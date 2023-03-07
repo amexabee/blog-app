@@ -7,7 +7,7 @@ Rspec.describe 'User index test', type: :feature do
     @second_user = User.create(name: 'Amanuel', bio: 'Student',
                                photo: 'https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg?w=400&h=300&c=crop', posts_counter: 5)
 
-    visit 'user_index_path'
+    visit root_path
   end
 
   it 'Should diplay all usernames of the users' do
@@ -27,7 +27,7 @@ Rspec.describe 'User index test', type: :feature do
 
   it 'should redirect the user to show page if its clicked'
     click_link(@first_user.name)
-    expect(page).to have_current_path user_path()
-
+    expect(page).to have_current_path user_path(@first_user.id)
   end
+
 end
