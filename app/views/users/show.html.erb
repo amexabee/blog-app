@@ -4,9 +4,10 @@
 <p><%=@user.bio%></p>
 </div>
 <ul class='user-posts'>
-<% @user.three_recent_posts.each_with_index do |post, index| %>
+<% @user.three_recent_posts.each_with_index do |post| %>
   <li>
-  <h4>Post #<%=index + 1%></h4>
+  <a  href=<%="#{@user.id}/posts/#{post.id}"%>><%=post.title%></a>
+  <h4>Post #<%=post.id%></h4>
   <p><%=post.text%></p>
   <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
   </li>
