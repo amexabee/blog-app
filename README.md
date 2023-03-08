@@ -102,6 +102,12 @@ rspec spec
 - Twitter: [@i_amanuel](https://twitter.com/i_amanuel)
 - LinkedIn: [Amanuel Galema](https://linkedin.com/in/amanuel-galema)
 
+👤 **Yosef Hesham**
+
+- GitHub: [@yosefHesham](https://github.com/yosefHesham)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/yousef-hesham98)
+- Twitter: [@yousef](https://twitter.com/Yousef45653478)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
