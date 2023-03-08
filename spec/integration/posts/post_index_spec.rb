@@ -8,7 +8,7 @@ RSpec.describe 'Post index test', type: :feature do
     visit user_posts_path(@user.id)
   end
 
-  it 'Should diplay the picture of the user' do 
+  it 'Should diplay the picture of the user' do
     assert page.has_xpath?("//img[@src = 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
           and @alt = 'user photo']")
   end
@@ -19,19 +19,19 @@ RSpec.describe 'Post index test', type: :feature do
 
   it 'should have the number of posts of the user' do
     expect(page).to have_content("Number of posts: #{@user.posts_counter}")
-  end 
-  
+  end
+
   it 'should display a post\'s title' do
     expect(page).to have_content(@post.title)
-  end 
-  
+  end
+
   it 'should display a post\'s body' do
     expect(page).to have_content(@post.text)
   end
-  
+
   it 'should display comments of the post' do
     expect(page).to have_content("Comment: #{@comment.text}")
-  end 
+  end
 
   it 'should have the number of comments of the post' do
     expect(page).to have_content("Comments: #{@post.comments_counter}")
@@ -43,11 +43,10 @@ RSpec.describe 'Post index test', type: :feature do
 
   it 'should have a pagination option' do
     expect(page).to have_content('Pagination')
-  end 
+  end
 
   it 'should redirect the user to show page if its clicked' do
     click_link(@post.title)
     expect(page).to have_current_path user_post_path(@user.id, @post.id)
-
   end
-end 
+end

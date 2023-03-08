@@ -7,15 +7,15 @@ RSpec.describe 'Post index test', type: :feature do
     @comment = Comment.create(post: @post, author: @user, text: 'Hi')
     visit user_post_path(@user.id, @post.id)
   end
-  
+
   it 'should display a post\'s title' do
     expect(page).to have_content(@post.title)
   end
 
   it 'should display a post\'s author' do
     expect(page).to have_content("Post ##{@post.id} by #{@post.author.name}")
-  end 
-  
+  end
+
   it 'should have the number of comments of the post' do
     expect(page).to have_content("Comments: #{@post.comments_counter}")
   end
@@ -30,9 +30,9 @@ RSpec.describe 'Post index test', type: :feature do
 
   it 'should display usernamename of the commentor' do
     expect(page).to have_content("Username: #{@comment.author.name}")
-  end 
-  
+  end
+
   it 'should display comment of the commentor' do
     expect(page).to have_content("Comment: #{@comment.text}")
-  end 
-end 
+  end
+end
