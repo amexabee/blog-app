@@ -4,6 +4,7 @@
   <li>
   <%link = "posts/#{post.id}"%>
   <a href=<%=link%>>
+  <h3><%=post.title%></h3>
   <h4>Post #<%=post.id%></h4>
   <p><%=post.text%></p>
   <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
@@ -11,5 +12,6 @@
   </li>
   <%= render partial: "comment", locals: {comments: post.five_recent_comments} %>
 <% end %>
+<button>Pagination</button>
 <%= link_to "Create a new post", new_user_post_path(current_user) %>
 </ul>

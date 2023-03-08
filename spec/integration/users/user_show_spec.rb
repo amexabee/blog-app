@@ -10,7 +10,8 @@ RSpec.describe 'User index test', type: :feature do
   end
 
   it 'Should diplay the picture of the user' do 
-    expect(page.html).to include('user photo')
+    assert page.has_xpath?("//img[@src = 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
+      and @alt = 'user photo']")
   end
 
   it 'Should display the username of the user' do
