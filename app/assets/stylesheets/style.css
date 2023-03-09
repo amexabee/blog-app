@@ -68,3 +68,29 @@ img {
   margin: 5px;
   padding: 5px;
 }
+
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.sign-in .field {
+  margin: 10px 0;
+}
+
+.sign-in .field input {
+  padding: 10px;
+  width: 50vw;
+}
+
+.sign-in .actions {
+  margin: 40px 0 10px;
+}
+
+.sign-in .actions input {
+  padding: 5px;
+  width: 52vw;
+  cursor: pointer;
+}
