@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  before_validation :set_default_values
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
@@ -12,5 +13,11 @@ class User < ApplicationRecord
 
   def three_recent_posts
     posts.limit(3).order(created_at: :DESC)
+  end
+
+  private
+
+  def set_default_values
+    self.posts_counter ||= 0
   end
 end
