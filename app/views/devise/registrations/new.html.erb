@@ -10,13 +10,13 @@
   </div>
 
   <div class="field">
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password' %>
-  </div>
 
  <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password' %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
