@@ -20,6 +20,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    user = @post.author
+    @post.destroy
+    user.decrement!(:posts_counter)
+    redirect_back_or_to user_posts_path(current_user.id)
+  end
+
   private
 
   def post_params
