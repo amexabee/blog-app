@@ -5,7 +5,9 @@
       <div class='delete-comment'>
         Username: <%= comment.author.name %>
         Comment: <%= comment.text %>
-        <%= button_to 'Delete', url_for([comment.post.author, comment.post, comment]), method: :delete %>
+        <% if can? :destroy, comment %>
+   <%= button_to 'Delete', url_for([comment.post.author, comment.post, comment]), method: :delete %>
+ <% end %>
       </div>
     <% end %>
   </div>
