@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @posts = Post.includes(:author).where(author_id: params[:user_id])
   end
@@ -18,6 +19,14 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    user = @post.author
+    @post.destroy
+    user.decrement!(:posts_counter)
+    redirect_to user_path(user.id)
   end
 
   private

@@ -1,10 +1,14 @@
-<%unless comments.empty?%>
-<div class='comment'>
-  <% comments.includes(:author).each do |comment| %>
-  <div>
-  Username: <%= comment.author.name%>
-  Comment: <%= comment.text%>
+
+<% unless comments.empty? %>
+  <div class='comment'>
+    <% comments.includes(:author).each do |comment| %>
+      <div class='delete-comment'>
+        Username: <%= comment.author.name %>
+        Comment: <%= comment.text %>
+        <% if can? :destroy, comment %>
+   <%= button_to 'Delete', url_for([comment.post.author, comment.post, comment]), method: :delete %>
+ <% end %>
+      </div>
+    <% end %>
   </div>
 <% end %>
-</div>
-<%end%>

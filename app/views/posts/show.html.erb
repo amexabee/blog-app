@@ -6,4 +6,9 @@
   </div>
   <%= render partial: 'comment', locals: { comments: @post.comments } %>
   <%= link_to 'Add a comment', new_user_post_comment_path(current_user, @post) %>
+  <span>
   <%= button_to 'Like', user_post_likes_path(current_user, @post), method: :post %>
+  <% if can? :destroy, @post %>
+  <%= button_to "delete", user_post_path(current_user.id, @post.id), class: "btn btn-danger btn-sm", method: :delete %>
+  <% end %>
+  </span>
