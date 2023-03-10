@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   before_validation :set_default_values
   attr_accessor :email_confirmation
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
@@ -13,8 +14,8 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: :author_id
   has_many :likes, foreign_key: :author_id
 
-  Roles = %i[admin default]
-  
+  ROLES = %i[admin default].freeze
+
   def three_recent_posts
     posts.limit(3).order(created_at: :DESC)
   end
