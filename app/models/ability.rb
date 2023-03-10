@@ -11,7 +11,8 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can :destroy, :all, author_id: user.id
+      can :manage, Post, author: user
+      can :manage, Comment, author: user
     end
     #   return unless user.present?
     #   can :read, :all
