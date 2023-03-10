@@ -94,6 +94,7 @@ img {
   width: 52vw;
   cursor: pointer;
 }
+
 .delete-comment {
   display: flex;
   justify-content: space-between;
