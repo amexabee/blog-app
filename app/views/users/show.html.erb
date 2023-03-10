@@ -9,7 +9,9 @@
   <a  href=<%="#{@user.id}/posts/#{post.id}"%>><%=post.title%></a>
   <h4>Post #<%=post.id%></h4>
   <p><%=post.text%></p>
+  <% if can? :destroy, post %>
   <%= button_to "delete", user_post_path(current_user.id, post.id), class: "btn btn-danger btn-sm", method: :delete %>
+  <% end %>
   <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
   </li>
 <% end %>

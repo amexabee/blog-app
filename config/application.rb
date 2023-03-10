@@ -1,4 +1,5 @@
 require_relative "boot"
+require 'cancancan'
 
 require "rails/all"
 
