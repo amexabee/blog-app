@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     user = @post.author
     @post.destroy
     user.decrement!(:posts_counter)
-    redirect_back_or_to user_posts_path(current_user.id)
+    redirect_to user_path(user.id)
   end
 
   private
