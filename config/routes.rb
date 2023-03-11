@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   
   namespace :api do
     resources :users, only: [] do
-      resources :posts, only: [:index], format: :json
+resources :posts, only: [:index], format: :json do
+        resources :comments, only: [:index, :create], format: :json
+      end
+
     end
   end
 end
