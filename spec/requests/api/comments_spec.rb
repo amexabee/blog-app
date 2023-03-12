@@ -1,42 +1,33 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/comments', type: :request do
-
-  path '/api/users/{user_id}/posts/{post_id}/comments' do
-    # You'll want to customize the parameter types...
-    parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
-    parameter name: 'post_id', in: :path, type: :string, description: 'post_id'
-
-    get('list comments') do
-      response(200, 'successful') do
-        let(:user_id) { '123' }
-        let(:post_id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
+  fixtures :users, :posts 
+  describe "GET /api/users/:user_id/posts/:post_id/comments" do
+    it "responds with 200" do
+      user = users(:tom)
+      post = posts(:post_1)
+      get api_user_post_comments_path(user.id, post.id)
+      expect(response).to have_http_status(200)
     end
+  end
 
-    post('create comment') do
-      response(200, 'successful') do
-        let(:user_id) { '123' }
-        let(:post_id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
+  describe 'POST /api/users/:user_id/posts/:post_id/comments' do
+    fixtures :users, :posts
+     it 'if comment was added' do
+      user = users(:tom)
+      post = posts(:post_1)
+      valid_attributes = {
+        comment: {
+        post: posts(:post_1),
+        author: users(:tom),
+        text: 'hi'
+      }
+      }
+      post api_user_post_comments_path(user.id, post.id), params: valid_attributes
+      puts response.body
+      expect(response).to have_http_status(201)
+      parsed_response = JSON.parse(response.body)
+      expect(parsed_response['text']).to eq('hi')
     end
   end
 end

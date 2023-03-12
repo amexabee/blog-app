@@ -20,5 +20,7 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  mount SwaggerUiEngine::Engine, at: '/swagger'
 end
 

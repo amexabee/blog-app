@@ -15,19 +15,166 @@ RSpec.configure do |config|
   # document below. You can override this behavior by adding a swagger_doc tag to the
   # the root example_group in your specs, e.g. describe '...', swagger_doc: 'v2/swagger.json'
   config.swagger_docs = {
-    'v1/swagger.yaml' => {
+    'swagger.yaml' => {
       openapi: '3.0.1',
       info: {
-        title: 'API V1',
-        version: 'v1'
+        title: 'API'
       },
-      paths: {},
+      paths: {
+        '/api/users/{user_id}/posts': {
+        get: {
+          summary: 'List all posts for a user',
+          parameters: [
+            {
+              name: 'user_id',
+              in: 'path',
+              description: 'ID of the user',
+              required: true,
+              schema: {
+                type: 'integer'
+              }
+            }
+          ],
+          responses: {
+            '200': {
+              description: 'A list of posts',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'array',
+                    items: {
+                      type: 'object',
+                      properties: {
+                        id: { type: 'integer' },
+                        title: { type: 'string' },
+                        body: { type: 'string' }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      '/api/users/{user_id}/posts/{post_id}/comments': {
+        get: {
+          summary: 'List all comments for a user\'s post',
+          parameters: [
+            {
+              name: 'user_id',
+              in: 'path',
+              description: 'ID of the user',
+              required: true,
+              schema: {
+                type: 'integer'
+              }
+            },
+            {
+              name: 'post_id',
+              in: 'path',
+              description: 'ID of the post',
+              required: true,
+              schema: {
+                type: 'integer'
+              }
+            }
+          ],
+          responses: {
+            '200': {
+              description: 'A list of comments',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'array',
+                    items: {
+                      type: 'object',
+                      properties: {
+                        id: { type: 'integer' },
+                        body: { type: 'string' },
+                        created_at: { type: 'string', format: 'date-time' },
+                        user: {
+                          type: 'object',
+                          properties: {
+                            id: { type: 'integer' },
+                            name: { type: 'string' }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+      },
+      post: {
+          summary: 'Add a comment to a post',
+          parameters: [
+            {
+              name: 'user_id',
+              in: 'path',
+              description: 'ID of the user',
+              required: true,
+              schema: {
+                type: 'integer'
+              }
+            },
+            {
+              name: 'post_id',
+              in: 'path',
+              description: 'ID of the post',
+              required: true,
+              schema: {
+                type: 'integer'
+              }
+            },
+            {
+              name: 'text',
+              in: 'body',
+              description: 'The comment to add',
+              required: true,
+              schema: {
+                type: 'object',
+                properties: {
+                  body: { type: 'string' }
+                }
+              }
+            }
+          ],
+          responses: {
+            '201': {
+              description: 'The created comment',
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      id: { type: 'integer' },
+                      body: { type: 'string' },
+                      created_at: { type: 'string', format: 'datetime' },
+                        user: {
+                          type: 'object',
+                          properties: {
+                            id: { type: 'integer' },
+                            name: { type: 'string' }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
       servers: [
         {
           url: 'https://{defaultHost}',
           variables: {
             defaultHost: {
-              default: 'www.example.com'
+              default: 'localhost:3000'
             }
           }
         }
