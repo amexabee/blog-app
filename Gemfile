@@ -82,3 +82,7 @@ gem 'devise'
 gem 'cancancan'
 
 gem 'jwt'
+
+gem 'rswag'
+
+gem 'swagger_ui_engine'
